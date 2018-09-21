@@ -1,8 +1,7 @@
 menus:
-    HOME: /
-    # ARCHIVE: /archives/
-    GITHUB: https://github.com/infini-design
-    # ABOUT: /about/
+    首页: /
+    设计素材: /
+    神器推荐: /
 
 favicon: /favicon.png
 logo: /images/logo.jpg

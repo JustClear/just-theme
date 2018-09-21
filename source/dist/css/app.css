@@ -23,7 +23,7 @@ code {
 
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0 2rem;
@@ -104,6 +104,15 @@ code {
   text-decoration: underline;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 9;
+}
+
 .nav {
   position: relative;
   height: 80px;
@@ -141,12 +150,46 @@ code {
 }
 
 body[data-page="home"] h2 {
-  margin: 0;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
 }
 
 body[data-page="home"] p {
   margin: 14px 0;
+}
+
+body[data-page="home"] .recomands {
+  overflow: hidden;
+}
+
+body[data-page="home"] .recomands .recomand {
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+body[data-page="home"] .recomands .recomand a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body[data-page="home"] .recomands .recomand:nth-child(1) {
+  width: 100%;
+  height: 360px;
+}
+
+body[data-page="home"] .recomands .recomand:nth-child(2), body[data-page="home"] .recomands .recomand:nth-child(3) {
+  width: 49%;
+  height: 180px;
+}
+
+body[data-page="home"] .recomands .recomand:nth-child(2) {
+  float: left;
+}
+
+body[data-page="home"] .recomands .recomand:nth-child(3) {
+  float: right;
 }
 
 body[data-page="home"] .article {
@@ -170,6 +213,27 @@ body[data-page="home"] .article:after {
   box-shadow: #FFF 0 0 0 5px;
 }
 
+body[data-page="home"] .article .thumbnail {
+  height: 360px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-size: cover;
+}
+
+body[data-page="home"] .article .thumbnail a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.articles {
+  margin-top: 50px;
+}
+
+.articles .cate-name {
+  font-size: 36px;
+}
+
 .article-meta {
   color: #666;
 }
@@ -179,6 +243,7 @@ body[data-page="home"] .article:after {
 }
 
 .page-content {
+  padding-top: 100px;
   color: #333;
 }
 
@@ -212,14 +277,14 @@ body[data-page="home"] .article:after {
   margin: 3rem 0 1rem;
 }
 
-.page-content p,
-.page-content li {
+.page-content li,
+.page-content p {
   margin: 1rem 0;
   line-height: 1.6;
 }
 
 .page-content li {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .page-content a {
@@ -237,8 +302,8 @@ body[data-page="home"] .article:after {
   margin: 0 auto;
 }
 
-.page-content ul,
-.page-content ol {
+.page-content ol,
+.page-content ul {
   line-height: 2;
 }
 
@@ -246,8 +311,7 @@ body[data-page="home"] .article:after {
   position: relative;
   background: #fafafa;
   margin: 0;
-  padding: 10px 0;
-  padding-left: 30px;
+  padding: 10px 0 10px 30px;
   border-left: 3px solid #999;
   box-sizing: border-box;
 }
