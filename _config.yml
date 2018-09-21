@@ -1,0 +1,12 @@
+menus:
+    HOME: /
+    # ARCHIVE: /archives/
+    GITHUB: https://github.com/infini-design
+    # ABOUT: /about/
+
+favicon: /favicon.png
+logo: /images/logo.jpg
+title: INFINI DESIGN
+description: ''
+url: /
+startyear: 2018
