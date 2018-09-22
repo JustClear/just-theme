@@ -1,10 +1,13 @@
 menus:
     首页: /
-    设计素材: /
+    素材精选: /
     神器推荐: /
+    站点推荐: /sites
+
+showNav: false
 
 favicon: /favicon.png
-logo: /images/logo.jpg
+logo: /images/logo.png
 title: INFINI DESIGN
 description: ''
 url: /

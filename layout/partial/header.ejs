@@ -6,11 +6,15 @@
                     <img src="<%= config.logo || theme.logo %>" alt="<%= config.title || theme.title %>">
                 </a>
             </div>
-            <ul class="menu">
-                <% for (var name in theme.menus) { %>
-                <li><a href="<%= theme.menus[name] %>"><%= name %></a></li>
-                <% }; %>
-            </ul>
+            <div class="icon icon-nav js-icon-nav<%= theme.showNav == true ? ' visible' : '' %>"></div>
         </div>
     </nav>
 </header>
+
+<div class="panel js-panel" data-type="menu">
+    <ul class="menu">
+        <% for (var name in theme.menus) { %>
+        <li><a href="<%= theme.menus[name] %>"><%= name %></a></li>
+        <% }; %>
+    </ul>
+</div>

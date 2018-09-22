@@ -1,5 +1,5 @@
-import '../style/style.scss';
-import '../images/logo.jpg';
+import '../style/app.scss';
+import '../images/logo.png';
 
 import App from 'container';
 import modules from 'modules/modules';

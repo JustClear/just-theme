@@ -1,0 +1,69 @@
+$head-height-pc: $head-height - 40px;
+$logo-size-pc: $logo-size - 10px;
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 9;
+    height: $head-height;
+
+    @media (min-width: 1000px) {
+        height: $head-height-pc; /* no */
+    }
+
+    .container {
+        height: 100%;
+    }
+}
+
+.nav {
+    position: relative;
+    height: 100%;
+
+    .logo {
+        float: left;
+        width: $logo-size;
+        height: $logo-size;
+        background: #fafcfb;
+        margin: ($head-height - $logo-size) / 2 0;
+
+        @media (min-width: 1000px) {
+            margin: ($head-height-pc - $logo-size-pc) / 2 0; /* no */
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .icon-nav {
+        float: right;
+        margin: ($head-height - $logo-size) / 2 0;
+        cursor: pointer;
+        display: none;
+
+        &.visible {
+            display: block;
+        }
+    }
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    @include centerX;
+    top: 200px;
+
+    li {
+        margin-bottom: 50px;
+    }
+
+    a {
+        font-weight: bold;
+    }
+}

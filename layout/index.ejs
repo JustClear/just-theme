@@ -3,39 +3,47 @@
 
 <div class="page-content">
     <div class="container">
-        <div class="recomands">
-            <% page.posts.each(function(post) { %>
-            <% if (post.recomand) { %>
-            <div class="recomand" style="background-image: url(<%= post.thumbnail %>);">
-                <a href="<%= post.path %>"></a>
+        <% if (page.current == 1) { %>
+            <div class="recomands">
+                <% site.posts.each(function(post) { %>
+                <% if (post.recomand) { %>
+                <div class="recomand" style="background-image: url(/<%= post.thumbnail %>);">
+                    <a href="<%= post.path %>"></a>
+                </div>
+                <% } %>
+                <% }); %>
             </div>
-            <% } %>
-            <% }); %>
-        </div>
+        <% } %>
 
         <div class="articles">
-        <h2 class="cate-name">设计精选</h2>
-        <% page.posts.each(function(post) { %>
-        <% if (!post.recomand) { %>
-        <article class="article">
-            <header class="article-header">
-                <h2 class="article-title">
-                    <a href="<%= post.path %>"><%= post.title %></a>
-                </h2>
-            </header>
-            <section class="article-excerpt">
-                <% if (post.excerpts != '') { %>
-                    <p><%= post.excerpts %> ...</p>
-                <% } %>
-            </section>
-            <footer class="article-meta">
-                <span><%= post.author || config.author %></span>
-                <span>publish at</span>
-                <time class="article-date" datetime="<%- date(page.date) %>"><%- date(post.date) %></time>
-            </footer>
-        </article>
-        <% } %>
-        <% }); %>
+            <% if (page.current == 1) { %>
+            <h2 class="cate-name">设计精选</h2>
+            <% } %>
+            <% page.posts.each(function(post) { %>
+            <article class="article">
+                <div class="thumbnail" style="background-image: url(/<%= post.thumbnail %>);">
+                    <a href="/<%= post.path %>"></a>
+                </div>
+                <div class="content">
+                    <h2 class="title">
+                        <a href="/<%= post.path %>"><%= post.title %></a>
+                    </h2>
+                    <div class="excerpt">
+                        <% if (post.excerpts != '') { %>
+                            <p><%= post.excerpts %> ...</p>
+                        <% } %>
+                    </div>
+                </div>
+            </article>
+            <% }); %>
+        </div>
+        <div class="pagination">
+            <% if (page.prev != 0) { %>
+                <a href="/<%= page.prev_link %>" class="page-prev">上一页</a>
+            <% } %>
+            <% if (page.next != 0) { %>
+                <a href="/<%= page.next_link %>" class="page-next">下一页</a>
+            <% } %>
         </div>
     </div>
 </div>

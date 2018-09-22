@@ -1,0 +1,34 @@
+<%- partial('partial/head') %>
+<%- partial('partial/header') %>
+
+<div class="page-content">
+    <div class="container">
+        <div class="Sites">
+            <% site.pages.each(function(page) { %>
+                <% if (page.sites) { %>
+                    <% page.sites.map(function(site) { %>
+                        <div class="cate" data-name="<%= site.cate %>">
+                            <div class="head">
+                                <h3 class="heading"><%= site.cateName %></h3>
+                            </div>
+                            <div class="content">
+                                <% site.sites.map(function(site) { %>
+                                    <div class="site">
+                                        <p class="title"><%= site.name %></p>
+                                        <div class="description">
+                                            <p><%= site.description %></p>
+                                        </div>
+                                        <a href="<%= site.url %>" target="_blank"></a>
+                                    </div>
+                                <% }); %>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } %>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+<%- partial('partial/footer') %>
+<%- partial('partial/foot') %>

@@ -16,12 +16,43 @@
             <%= config.title %>
         <% } %>
     </title>
+    <script>
+    ;(function(win, doc) {
+        var docEl = doc.documentElement,
+            UA = navigator.userAgent;
+        var refreshRemId;
+        var refreshRem = function() {
+            var w = docEl.getBoundingClientRect().width || 320;
+            var fontSize = w / 320 * 20;
+            fontSize = fontSize > 40 ? 40 : fontSize;
+            docEl.style.fontSize = fontSize + 'px';
+            var finalFontSize = parseFloat(win.getComputedStyle(docEl).getPropertyValue('font-size'));
+            if (finalFontSize === fontSize) return;
+            fontSize = fontSize + (fontSize - finalFontSize);
+            docEl.style.fontSize = fontSize + 'px';
+            win.fontSize = fontSize;
+        };
+        win.addEventListener('resize', function() {
+            clearTimeout(refreshRemId);
+            refreshRemId = setTimeout(refreshRem, 100);
+        }, false);
+        win.addEventListener('pageshow', function(e) {
+            if (e.persisted) {
+                clearTimeout(refreshRemId);
+                refreshRemId = setTimeout(refreshRem, 100);
+            }
+        }, false);
+        refreshRem();
+    })(window, document);
+</script>
     <link rel="shortcut icon" href="/favicon.ico">
     <%- css('/dist/css/app.css') %>
 </head>
 
 <% if (is_home()) { %>
 <body data-page="home">
+<% } else if(is_post()) { %>
+    <body data-page="article">
 <% } else { %>
-<body data-page="article">
+<body data-page="page">
 <% } %>

@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import extractText from 'extract-text-webpack-plugin';
-import MinifyPlugin from 'babel-minify-webpack-plugin';
+import Minify from 'babel-minify-webpack-plugin';
 import Copy from 'copy-webpack-plugin';
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -20,12 +20,10 @@ const configure = {
     module: {
         rules: [{
             test: /\.(js|es6)$/,
-            type: 'javascript/auto',
             use: ['babel-loader'],
             exclude: /node_modules\/lodash/,
         }, {
             test: /\.(scss|css)$/,
-            type: 'javascript/auto',
             use: extractText.extract({
                 publicPath: '../',
                 fallback: `style-loader`,
@@ -37,7 +35,6 @@ const configure = {
             }),
         }, {
             test: /\.(mp3|mp4)$/,
-            type: 'javascript/auto',
             use: [{
                 loader: `url-loader`,
                 options: {
@@ -47,7 +44,6 @@ const configure = {
             }],
         }, {
             test: /\.(woff|ttf|eot)$/,
-            type: 'javascript/auto',
             use: [{
                 loader: `url-loader`,
                 options: {
@@ -57,7 +53,6 @@ const configure = {
             }],
         }, {
             test: /\.(svg|gif|jpg|jpeg|png)$/,
-            type: 'javascript/auto',
             use: [{
                 loader: `url-loader`,
                 options: {
@@ -67,7 +62,6 @@ const configure = {
             }],
         }, {
             test: /\.json$/,
-            type: 'javascript/auto',
             use: ['json-loader'],
         }],
     },
@@ -98,6 +92,6 @@ const configure = {
     ],
 };
 
-if (!isDev) configure.plugins.push(new MinifyPlugin());
+if (!isDev) configure.plugins.push(new Minify());
 
 module.exports = configure;

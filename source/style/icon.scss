@@ -1,0 +1,12 @@
+.icon {
+    $size: $logo-size;
+    width: $size;
+    height: $size;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+
+    &.icon-nav {
+        background-image: url('../images/icon-nav.svg');
+    }
+}
