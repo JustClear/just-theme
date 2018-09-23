@@ -10,6 +10,10 @@
   text-align: center;
 }
 
+.QanelasSoft {
+  font-family: QanelasSoft;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
@@ -549,4 +553,9 @@ body[data-page="article"] .content {
   color: #333;
   font-weight: bold;
   letter-spacing: 0.128rem;
+}
+
+@font-face {
+  font-family: QanelasSoft;
+  src: url(../fonts/QanelasSoft-ExtraBold.otf?396e6a5e);
 }

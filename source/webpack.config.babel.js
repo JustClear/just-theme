@@ -43,7 +43,7 @@ const configure = {
                 },
             }],
         }, {
-            test: /\.(woff|ttf|eot)$/,
+            test: /\.(woff|ttf|eot|otf)$/,
             use: [{
                 loader: `url-loader`,
                 options: {

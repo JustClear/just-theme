@@ -21,7 +21,11 @@
             <% } %>
             <% page.posts.each(function(post) { %>
             <article class="article">
+                <% if (post.thumbnail) { %>
                 <div class="thumbnail" style="background-image: url(/<%= post.thumbnail %>);">
+                <% } else { %>
+                <div class="thumbnail">
+                <% } %>
                     <a href="/<%= post.path %>"></a>
                 </div>
                 <div class="content">

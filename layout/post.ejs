@@ -2,7 +2,9 @@
 <%- partial('partial/header') %>
 
 <div class="page-content">
+    <% if (page.thumbnail) { %>
     <div class="thumbnail" style="background-image: url(/<%= page.thumbnail %>);"></div>
+    <% } %>
     <div class="container">
         <article class="article">
             <div class="head">
