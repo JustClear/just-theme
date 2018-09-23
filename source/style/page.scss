@@ -37,7 +37,7 @@ body[data-page="article"] {
             h4,
             h5,
             h6 {
-                margin: 40px 0; /* no */
+                margin: 40px 0 20px; /* no */
             }
 
             code {
@@ -50,6 +50,10 @@ body[data-page="article"] {
 .page-content {
     padding-top: $head-height + 20px;
     color: #333;
+
+    @media (min-width: 1000px) {
+        padding-top: $head-height-pc + 20px; /* no */
+    }
 
     .thumbnail {
         height: 400px;
@@ -84,7 +88,7 @@ body[data-page="article"] {
     h4,
     h5,
     h6 {
-        margin: 60px 0;
+        margin: 60px 0 30px;
     }
 
     li,

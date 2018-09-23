@@ -1,11 +1,10 @@
 <header class="header">
     <nav class="nav">
         <div class="container">
-            <div class="logo">
-                <a href="<%= config.url || theme.url %>">
-                    <img src="<%= config.logo || theme.logo %>" alt="<%= config.title || theme.title %>">
-                </a>
+            <div class="logo" style="background-image: url(<%= config.logo || theme.logo %>);">
+                <a href="<%= config.url || theme.url %>"></a>
             </div>
+            <a href="<%= config.url || theme.url %>"><span class="logo-name QanelasSoft">INFINI</span></a>
             <div class="icon icon-nav js-icon-nav<%= theme.showNav == true ? ' visible' : '' %>"></div>
         </div>
     </nav>

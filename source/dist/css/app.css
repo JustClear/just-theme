@@ -11,7 +11,29 @@
 }
 
 .QanelasSoft {
-  font-family: QanelasSoft;
+  font-family: QanelasSoft, 'MicroSoft Yahei';
+}
+
+.medium-zoom-overlay {
+  z-index: 10;
+}
+
+.button-download {
+  display: inline-block;
+  text-align: center;
+  width: 4.266667rem;
+  height: 1.28rem;
+  line-height: 1.28rem;
+  border-radius: 0.106667rem;
+  border: 1px solid #333;
+  color: #333 !important;
+  font-weight: normal;
+}
+
+.button-download:hover {
+  text-decoration: none !important;
+  background-color: #333;
+  color: #fff !important;
 }
 
 body {
@@ -260,7 +282,7 @@ body[data-page="article"] .content {
   body[data-page="article"] .content h4,
   body[data-page="article"] .content h5,
   body[data-page="article"] .content h6 {
-    margin: 40px 0;
+    margin: 40px 0 20px;
   }
 
   body[data-page="article"] .content code {
@@ -271,6 +293,12 @@ body[data-page="article"] .content {
 .page-content {
   padding-top: 2.56rem;
   color: #333;
+}
+
+@media (min-width: 1000px) {
+  .page-content {
+    padding-top: 80px;
+  }
 }
 
 .page-content .thumbnail {
@@ -306,7 +334,7 @@ body[data-page="article"] .content {
 .page-content h4,
 .page-content h5,
 .page-content h6 {
-  margin: 1.28rem 0;
+  margin: 1.28rem 0 0.64rem;
 }
 
 .page-content li,
@@ -390,8 +418,9 @@ body[data-page="article"] .content {
   float: left;
   width: 1.28rem;
   height: 1.28rem;
-  background: #fafcfb;
   margin: 0.426667rem 0;
+  background-size: cover;
+  background-position: center;
 }
 
 @media (min-width: 1000px) {
@@ -400,9 +429,24 @@ body[data-page="article"] .content {
   }
 }
 
-.nav .logo img {
+.nav .logo a {
+  display: block;
   width: 100%;
   height: 100%;
+}
+
+.nav .logo-name {
+  display: inline-block;
+  height: 2.133333rem;
+  margin-top: 0.426667rem;
+  margin-left: 0.085333rem;
+}
+
+@media (min-width: 1000px) {
+  .nav .logo-name {
+    margin-top: 6px;
+    margin-left: 4px;
+  }
 }
 
 .nav .icon-nav {

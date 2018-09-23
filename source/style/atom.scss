@@ -12,5 +12,27 @@
 }
 
 .QanelasSoft {
-    font-family: QanelasSoft;
+    font-family: QanelasSoft, 'MicroSoft Yahei';
+}
+
+.medium-zoom-overlay {
+    z-index: 10;
+}
+
+.button-download {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 5px;
+    border: 1px solid #333; /* no */
+    color: #333 !important;
+    font-weight: normal;
+
+    &:hover {
+        text-decoration: none !important;;
+        background-color: #333;
+        color: #fff !important;
+    }
 }

@@ -7,7 +7,7 @@
             <div class="recomands">
                 <% site.posts.each(function(post) { %>
                 <% if (post.recomand) { %>
-                <div class="recomand" style="background-image: url(/<%= post.thumbnail %>);">
+                <div class="recomand" style="background-image: url(<%= post.thumbnail %>);">
                     <a href="<%= post.path %>"></a>
                 </div>
                 <% } %>
@@ -22,7 +22,7 @@
             <% page.posts.each(function(post) { %>
             <article class="article">
                 <% if (post.thumbnail) { %>
-                <div class="thumbnail" style="background-image: url(/<%= post.thumbnail %>);">
+                <div class="thumbnail" style="background-image: url(<%= post.thumbnail %>);">
                 <% } else { %>
                 <div class="thumbnail">
                 <% } %>
